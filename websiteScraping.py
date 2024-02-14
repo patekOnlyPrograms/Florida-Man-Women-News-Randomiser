@@ -15,8 +15,16 @@ def print_headline(response_text):
         if "Florida Man" in headline.text:
             print(headline.text)
 
+def headline_URL(response_text):
+    soup = BeautifulSoup(response_text, "lxml")
+    linksForHeadlines = soup.find_all(attrs={"class": "card__headline card__headline--long"})
+    for linksForHeadline in linksForHeadlines:
+        print(linksForHeadline)
+
 
 print_headline(response.text)
+
+headline_URL(response.text)
 
 driver_path = "chromedriver"
 brave_path = "/usr/bin/brave-browser"
@@ -24,6 +32,6 @@ brave_path = "/usr/bin/brave-browser"
 option = webdriver.ChromeOptions()
 option.binary_location = brave_path
 
-browser = webdriver.Chrome(options=option)
+#browser = webdriver.Chrome(options=option)
 
-browser.get(url)
+#browser.get(url)
