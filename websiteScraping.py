@@ -13,13 +13,14 @@ def print_headline(response_text):
     headlines = soup.find_all(attrs={"class": "card__headline__text"})
     for headline in headlines:
         if "Florida Man" in headline.text:
+            print(headline['href'])
             print(headline.text)
 
 def headline_URL(response_text):
     soup = BeautifulSoup(response_text, "lxml")
     linksForHeadlines = soup.find_all(attrs={"class": "card__headline card__headline--long"})
     for linksForHeadline in linksForHeadlines:
-        print(linksForHeadline)
+        print(linksForHeadline['href'])
 
 
 print_headline(response.text)
