@@ -1,0 +1,13 @@
+body {
+  background-color: black;
+}
+
+.title {
+    color: white;
+    text-align: center;
+}
+
+h1 {
+  color: white;
+  margin-left: 20px;
+}
