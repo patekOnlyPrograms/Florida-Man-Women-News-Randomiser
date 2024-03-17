@@ -17,16 +17,15 @@ def headlineFinder(link):
             if "Florida Man" in headline.text:
                 listOfData.append([headline.text])
 
-headlineFinder("https://www.huffpost.com/topic/florida-man?page=")
 
+headlineFinder("https://www.huffpost.com/topic/florida-man?page=")
 
 jsonString = json.dumps(listOfData, indent=2)
 
-with open("data.json", "w") as outfile:
+with open("static/data.json", "w") as outfile:
     outfile.write(jsonString)
 
 print(jsonString)
-
 
 # Still needs some work
 """def headline_URL(response_text):
