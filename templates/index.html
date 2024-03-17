@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="static/template.css">
+    <script src="static/script.js"></script>
     <title>Florida Man Women News Randomiser</title>
 </head>
 <body>
     <div class="title">Florida Man Women News Randomiser</div>
-    <h1>Placeholder for headlines</h1>
+   <ul>
+        {% for name in names %}
+            <li>{{ name }}</li>
+        {% endfor %}
+    </ul>
+    <h1 id="headline-txt" class="randomiseOutput"></h1>
+
+    <button id="btn-randomise" onclick="randomiseFloridaMan()" class="myButton">Randomise</button>
+
+
 </body>
 </html>
